@@ -1,8 +1,7 @@
-/* --- Убираем белую рамку и делаем фон тёмным на весь экран --- */
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #020617; /* тот же тёмный фон, что и на странице */
+  background-color: #020617; 
   color: white;
   font-family: "Poppins", sans-serif;
   height: 100%;

@@ -1,6 +1,6 @@
 :host {
   display: block;
-  margin-top: 90px; /* чтобы контент не залез под меню */
+  margin-top: 90px; 
   text-align: center;
   font-family: "Poppins", sans-serif;
   background: radial-gradient(circle at top, #0f172a 0%, #020617 100%);
@@ -8,25 +8,23 @@
   color: #e2e8f0;
 }
 
-/* --- Заголовок --- */
 h2 {
   font-size: 2.6rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #38bdf8; /* яркий бирюзовый */
+  color: #38bdf8; 
   margin-bottom: 0.5rem;
   text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
 }
 
-/* --- Подзаголовок --- */
 p {
   font-size: 1.2rem;
-  color: #94a3b8; /* серо-голубой */
+  color: #94a3b8; 
   letter-spacing: 0.5px;
 }
 
-/* --- Блок с курсами --- */
+
 .rates-section {
   margin-top: 3rem;
 }
@@ -39,7 +37,6 @@ p {
   margin-bottom: 1.5rem;
 }
 
-/* --- Сетка карточек --- */
 .cards {
   display: flex;
   justify-content: center;
@@ -48,7 +45,6 @@ p {
   margin-top: 1.5rem;
 }
 
-/* --- Карточка валюты --- */
 .card {
   background: linear-gradient(145deg, rgba(17, 24, 39, 0.9), rgba(30, 41, 59, 0.9));
   border: 1px solid rgba(56, 189, 248, 0.4);
@@ -66,7 +62,6 @@ p {
   border-color: #38bdf8;
 }
 
-/* --- Внутри карточки --- */
 .card img {
   width: 55px;
   height: 40px;
@@ -78,7 +73,7 @@ p {
 .card h4 {
   margin: 0.3rem 0;
   font-size: 1.4rem;
-  color: #fbbf24; /* золотистый акцент */
+  color: #fbbf24; 
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -87,11 +82,10 @@ p {
 .card p {
   margin: 0;
   font-size: 1.1rem;
-  color: #22d3ee; /* яркий бирюзовый */
+  color: #22d3ee; 
   font-weight: 600;
 }
 
-/* --- Последнее обновление --- */
 .updated {
   margin-top: 1.5rem;
   font-size: 0.95rem;

@@ -8,11 +8,6 @@ import { DataService } from './data.service';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, HeaderComponent],
-  // template: `
-  //   <h1>Курсы валют</h1>
-  //   <button (click)="loadData()">Загрузить данные</button>
-  //   <pre>{{ data | json }}</pre>
-  // `
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
