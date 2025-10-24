@@ -1,0 +1,22 @@
+<h2>Welcome to Currency Dashboard 🪙</h2>
+<p>Here you can explore exchange rates and get the latest data.</p>
+
+<div class="rates-section" *ngIf="!loading; else loadingTpl">
+  <h3>🌍 Major Currency Rates (Base: USD)</h3>
+  <div class="cards">
+    <div class="card" *ngFor="let item of rates">
+      <div class="flag">
+        <img [src]="'https://flagcdn.com/48x36/' + item.code.substring(0, 2).toLowerCase() + '.png'" alt="{{item.code}} flag" />
+      </div>
+      <div class="info">
+        <h4>{{ item.code }}</h4>
+        <p>{{ item.value | number: '1.2-2' }}</p>
+      </div>
+    </div>
+  </div>
+  <p class="updated">Last updated: {{ lastUpdated | date:'medium' }}</p>
+</div>
+
+<ng-template #loadingTpl>
+  <p>Loading latest rates...</p>
+</ng-template>

@@ -1,0 +1,38 @@
+<div class="catalog">
+  <h2>💱 Currency Catalog</h2>
+
+  <input
+  type="text"
+  placeholder="Search currency (e.g. USD, EUR)..."
+  [(ngModel)]="searchTerm"
+  (ngModelChange)="onSearch(searchTerm)"
+  class="search-input"
+  />
+
+
+
+  <div *ngIf="currencies$ | async as currencies; else loading">
+    <p class="last-update" *ngIf="lastUpdated">
+      ⏰ Last updated: {{ lastUpdated | date: 'medium' }}
+    </p>
+    <table class="currency-table">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Rate (to USD)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let currency of currencies">
+          <td>{{ currency[0] }}</td>
+          <td>{{ currency[1] | number: '1.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <ng-template #loading>
+    <p>Loading data...</p>
+  </ng-template>
+</div>

@@ -1,12 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, HeaderComponent],
+  // template: `
+  //   <h1>Курсы валют</h1>
+  //   <button (click)="loadData()">Загрузить данные</button>
+  //   <pre>{{ data | json }}</pre>
+  // `
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'main_project';
+export class AppComponent implements OnInit {
+  data: any;
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {}
+
+  loadData() {
+    this.dataService.getData().subscribe({
+      next: (result) => (this.data = result),
+      error: (err) => console.error('Ошибка при загрузке:', err)
+    });
+  }
 }
