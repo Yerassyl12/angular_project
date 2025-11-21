@@ -5,13 +5,18 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
-  private apiUrl = 'https://api.currencyapi.com/v3/latest'; 
-  private apiKey = 'cur_live_9wtjEEM0rYnbqqVaSUyREdH9a7GKNkbrHTgTUa49';
+export class DataService{
+  private apiUrl = 'https://fakestoreapi.com/products';
+
   constructor(private http: HttpClient) {}
 
-  getData(): Observable<any> {
-    const url = `${this.apiUrl}?apikey=${this.apiKey}&base_currency=USD`;
-    return this.http.get(url);
+  // Получить все продукты
+  getData(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
+  }
+
+  // Получить детали одного продукта по ID
+  getItemById(id: number | string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 }

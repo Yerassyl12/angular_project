@@ -1,6 +1,6 @@
 :host {
   display: block;
-  margin-top: 90px; 
+  /* margin-top: 90px;  */
   text-align: center;
   font-family: "Poppins", sans-serif;
   background: radial-gradient(circle at top, #0f172a 0%, #020617 100%);

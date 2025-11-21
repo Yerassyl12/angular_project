@@ -1,0 +1,61 @@
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 карточки в ряд */
+  gap: 20px; /* расстояние между карточками */
+  padding: 20px;
+  justify-items: center;
+}
+
+.card {
+  width: 300px;        /* одинаковая ширина */
+  height: 400px;       /* одинаковая высота */
+  background-color: #ffecb3; /* яркий, приятный цвет (можно поменять) */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;       /* фиксированная высота для изображения */
+  object-fit: cover;    /* сохраняет пропорции, обрезая лишнее */
+}
+
+.card-info {
+  padding: 10px 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-info h3 {
+  font-size: 18px;
+  margin: 10px 0 5px 0;
+  color: #333;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card-info .price {
+  font-weight: bold;
+  color: #e91e63; /* яркий цвет для цены */
+  margin-bottom: 5px;
+}
+
+.card-info .category {
+  font-size: 14px;
+  color: #555;
+}
